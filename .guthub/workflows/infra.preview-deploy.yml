@@ -15,12 +15,12 @@ permissions:
 
 jobs:
   preview:
-    name;: "Preview"
+    name: "Preview"
     runs-on: ubuntu-latest
     steps:
       - run: |
         echo "Hello World"
-        
+
 
 
 
