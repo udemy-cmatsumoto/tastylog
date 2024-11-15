@@ -3,11 +3,11 @@ name: "infra preview & deploy"
 on:
   push:
     branches:
-     - main
+      - main
     paths:
       - 10_infra/**
       - .github/workflows/**
-  workflow_dispatch:  
+  workflow_dispatch:
 
 permissions:
   id-token: write
@@ -18,9 +18,7 @@ jobs:
     name: "Preview"
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
       - run: |
-        echo "Hello World"
-
-
-
-
+          echo "Hello World"
