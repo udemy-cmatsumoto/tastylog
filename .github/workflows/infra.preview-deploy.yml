@@ -52,7 +52,6 @@ jobs:
       - name: Terraform plan
         run: |
           terraform plan \
-            -chdir=10_infra/ \
             -var "project=${{ env.TF_PROJECT}}" \            
             -var "environment=${{ env.TF_ENVIRONMENT}}" \            
             -var "username=${{ secrets.MYSQL_USERNAME }}" \            
