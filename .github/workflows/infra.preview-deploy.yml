@@ -43,6 +43,11 @@ jobs:
         with:
           aws-region: ${{ env.AWS_REGION }}
           role-to-assume: ${{ secrets.AWS_IAM_ROLE_ARN }}
+
+      - name: Check MYSQL_PASSWORD secret
+        run: |
+          echo "MYSQL_PASSWORD is set"
+
       - name: Terraform init
         run: |
           terraform init -no-color
@@ -52,7 +57,6 @@ jobs:
       - name: Terraform plan
         run: |
           terraform plan \
-            -chdir=10_infra \
             -var "project=${{ env.TF_PROJECT }}" \
             -var "environment=${{ env.TF_ENVIRONMENT }}" \
             -var "username=${{ secrets.MYSQL_USERNAME }}" \
