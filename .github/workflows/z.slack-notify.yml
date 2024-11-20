@@ -11,7 +11,7 @@ jobs:
       - name: Slack notify
         uses: slackapi/slack-github-action@v2.0.0
         with:
-          channel-id: "C081F9L7QBY"
+          channel: "C081F9L7QBY"
           payload: |
             {
               "attachments": [
@@ -38,4 +38,4 @@ jobs:
               ]
             }
         env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }} # SLACK_BOT_TOKENをGitHub Secretsから取得
